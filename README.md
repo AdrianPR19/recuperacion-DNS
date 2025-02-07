@@ -15,7 +15,6 @@ Vagrant.configure("2") do |config|
     vb.linked_clone = true
   end
 
-  # Actualizar sistema operativo
   config.vm.provision "update", type: "shell", inline: <<-SHELL
     apt-get update
   SHELL
@@ -24,8 +23,8 @@ Vagrant.configure("2") do |config|
   # Configuración del servidor 'atlas'
   ######################################################################
   config.vm.define "atlas" do |atlas|
-    atlas.vm.hostname = "atlas"  # Asignar nombre de host
-    atlas.vm.network "private_network", ip: "192.168.56.10"  # Dirección IP fija
+    atlas.vm.hostname = "atlas"  
+    atlas.vm.network "private_network", ip: "192.168.56.10"  
 
     atlas.vm.provision "bind9-install", type: "shell", inline: <<-SHELL
         apt-get install -y bind9 bind9-utils bind9-doc
@@ -36,8 +35,8 @@ Vagrant.configure("2") do |config|
   # Configuración del servidor 'ceo'
   ######################################################################
   config.vm.define "ceo" do |ceo|
-    ceo.vm.hostname = "ceo"  # Asignar nombre de host
-    ceo.vm.network "private_network", ip: "192.168.56.11"  # Dirección IP fija
+    ceo.vm.hostname = "ceo"  
+    ceo.vm.network "private_network", ip: "192.168.56.11"  
 
     ceo.vm.provision "bind9-install", type: "shell", inline: <<-SHELL
         apt-get install -y bind9 bind9-utils bind9-doc
@@ -192,8 +191,8 @@ Para verificar la configuración, ejecutamos:
 dig @192.168.56.11 google.com
 ```
 
-Si la consulta obtiene una respuesta válida, la configuración es correcta.
+Si obtenemos una respuesta valida ya esta hecho
 
 ---
-Este documento cubre la configuración básica de servidores DNS en un entorno Vagrant. Para mayor seguridad y escalabilidad, pueden aplicarse configuraciones adicionales según sea necesario.
+
 

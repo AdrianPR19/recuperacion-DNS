@@ -27,8 +27,8 @@ Vagrant.configure("2") do |config|
   # Servidor ceo
   
   config.vm.define "ceo" do |ceo|
-    ceo.vm.hostname = "ceo"  # Asignamos el nombre de host
-    ceo.vm.network "private_network", ip: "192.168.56.11"  # IP fija
+    ceo.vm.hostname = "ceo"  
+    ceo.vm.network "private_network", ip: "192.168.56.11"  
 
     ceo.vm.provision "bind9-install", type: "shell", inline: <<-SHELL
         apt-get install -y bind9 bind9-utils bind9-doc
