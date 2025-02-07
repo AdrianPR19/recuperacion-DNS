@@ -191,7 +191,8 @@ Para verificar la configuración, ejecutamos:
 dig @192.168.56.11 google.com
 ```
 
-Si obtenemos una respuesta valida ya esta hecho
+Si obtenemos una respuesta valida ya esta hecho y funcionando correctamente
+
 
 ---
 
