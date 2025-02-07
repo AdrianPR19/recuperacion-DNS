@@ -1,4 +1,4 @@
-# Configuración de Servidores DNS en Vagrant
+# recuperacion DNS 
 
 ## 1. Establecimiento de los nombres de los servidores
 En esta sección, definimos los nombres de host para las máquinas virtuales en Vagrant. Es crucial asegurarnos de que "atlas" y "ceo" tengan sus respectivos nombres bien configurados desde el principio para evitar inconvenientes futuros.
@@ -53,22 +53,7 @@ Tras modificar el `Vagrantfile`, ejecutamos el siguiente comando para iniciar la
 vagrant up
 ```
 
-Si ya estaban encendidas, es recomendable reiniciarlas para que los cambios se apliquen correctamente:
 
-```bash
-vagrant reload --provision
-```
-
-### 1.3 Verificar que los nombres se asignaron correctamente
-Para asegurarnos de que cada servidor tiene su nombre de host configurado correctamente, accedemos a cada uno y ejecutamos:
-
-```bash
-vagrant ssh atlas #o ceo
-hostname
-exit
-```
-
-Si el nombre que aparece es el esperado ("atlas" o "ceo"), la configuración ha sido aplicada correctamente.
 
 ## 2. Asignación de direcciones IP a atlas y ceo
 Cada servidor debe contar con una dirección IP fija:
@@ -76,7 +61,7 @@ Cada servidor debe contar con una dirección IP fija:
 - **Atlas**: `192.168.56.10`
 - **Ceo**: `192.168.56.11`
 
-Para comprobar que las direcciones IP se han establecido correctamente, ejecutamos los siguientes comandos:
+Para comprobar que las direcciones IP se han establecido correctamente, ejecutamos los siguientes comandos en el vagrantfile:
 
 ```bash
 vagrant ssh atlas
