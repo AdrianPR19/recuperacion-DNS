@@ -1,2 +1,5 @@
 
 httpsgithub.comEnriquechis13
+config.ssh.insert_key = false
+ChispoXd — hoy a las 16:20
+config.vm.network "forwarded_port", guest: 8080, host: 8080
