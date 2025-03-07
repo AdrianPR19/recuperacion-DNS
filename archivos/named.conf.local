@@ -1,0 +1,13 @@
+zone "olimpo.test" {
+	type master;
+	file "/etc/bind/db.olimpo";
+	allow-transfer { 192.168.56.11; }; // Solo permite a ceo recibir la transferencia
+	notify yes;
+};
+
+zone "56.168.192.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.olimpo.rev";
+	allow-transfer { 192.168.56.11; };
+	notify yes;
+};
